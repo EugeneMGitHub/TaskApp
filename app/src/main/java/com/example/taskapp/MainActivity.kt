@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -89,6 +90,81 @@ fun MainFun(){
     ){
         HeaderUI()
         TaskCardUI()
+        StatisticUI()
+    }
+}
+
+@Composable
+fun StatisticUI() {
+    Column(
+        modifier = Modifier.padding(30.dp)
+    ) {
+        Row(
+            modifier = Modifier,
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ){
+
+            Box(
+                modifier = Modifier
+                    .clip(CircleShape)
+                    .background(SecondaryColor)
+                    .size(10.dp)
+            ){
+//                Text(
+//                    text = "On Going",
+//                    fontSize = 10.sp,
+//                    fontFamily = Poppins,
+//                    color = Color(0xFF7885B9)
+//                )
+            }
+            Text(
+                text = "Your ongoing tasks",
+                fontFamily = Poppins,
+                fontSize = 16.sp,
+                color = PrimaryTextColor,
+                fontWeight = FontWeight.Bold
+            )
+        }
+
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Row(){
+               Icon(
+                   painter = painterResource(id = R.drawable.ic_clock),
+                   contentDescription = "",
+                   tint = Color(0xFF818181),
+                   modifier = Modifier.size(16.dp)
+               )
+                Spacer(modifier = Modifier.width(6.dp))
+                Text(
+                    text = "09.00 AM - 11.00 AM",
+                    fontFamily = Poppins,
+                    fontSize = 12.sp,
+                    color = Color(0xFF818181),
+                    fontWeight = FontWeight.Medium
+                )
+            }
+            Box(
+                modifier = Modifier
+                    .clip(shape = RoundedCornerShape(8.dp))
+                    .background(Color(0xFFE1E3FA))
+                    .padding(horizontal = 10.dp, vertical = 2.dp)
+                    .border(width = 0.dp, color = Color.Transparent, shape = RoundedCornerShape(8.dp))
+            ){
+                Text(
+                    text = "On Going",
+                    fontSize = 10.sp,
+                    fontFamily = Poppins,
+                    color = Color(0xFF7885B9)
+                )
+            }
+
+
+        }
     }
 }
 
