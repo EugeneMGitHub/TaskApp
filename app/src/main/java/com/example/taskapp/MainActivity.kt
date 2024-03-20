@@ -133,7 +133,7 @@ fun StatisticUI() {
 //                )
             }
             Text(
-                text = "Your ongoing tasks",
+                text = "Текущие задачи",
                 fontFamily = Poppins,
                 fontSize = 16.sp,
                 color = PrimaryTextColor,
@@ -174,7 +174,7 @@ fun StatisticUI() {
                     )
             ){
                 Text(
-                    text = "On Going",
+                    text = "Текущие",
                     fontSize = 10.sp,
                     fontFamily = Poppins,
                     color = Color(0xFF7885B9)
@@ -187,7 +187,7 @@ fun StatisticUI() {
         Spacer(modifier = Modifier.height(14.dp))
 
         Text(
-            text = "Statistic",
+            text = "Статистика",
             fontFamily = Poppins,
             fontSize = 16.sp,
             color = SubTextColor,
@@ -214,9 +214,9 @@ fun StatisticIndicatorUI() {
            .height(120.dp),
        verticalArrangement = Arrangement.SpaceBetween
    ) {
-       IndicatorItemUI(text = "Finish on time")
-       IndicatorItemUI(color = SecondaryColor, text = "Past the deadline")
-       IndicatorItemUI(color = Color(0xFFE3E5E7), text = "Still ongoing")
+       IndicatorItemUI(text = "Закончены вовремя")
+       IndicatorItemUI(color = SecondaryColor, text = "Перешли дедлайн")
+       IndicatorItemUI(color = Color(0xFFE3E5E7), text = "В процессе")
    }
 }
 
@@ -278,14 +278,14 @@ fun StatisticProgressUI(primaryPercentage: Float = 60f,secondaryPercentage:Float
             )
         }
 
-        val annotatedString2 = AnnotatedString.Builder("${(primaryPercentage+secondaryPercentage).toInt()}%\nDone")
+        val annotatedString2 = AnnotatedString.Builder("${(primaryPercentage+secondaryPercentage).toInt()}%\nГотово")
             .apply {
                 addStyle(
                     SpanStyle(
                         color = SubTextColor,
                         fontSize = 10.sp,
                         fontWeight = FontWeight.Normal
-                    ), 4, 8
+                    ), 4, 10
                 )
             }
 
@@ -304,7 +304,7 @@ fun StatisticProgressUI(primaryPercentage: Float = 60f,secondaryPercentage:Float
 @Composable
 fun TaskCardUI() {
 
-    val annotatedString1 = AnnotatedString.Builder("4/6 Task")
+    val annotatedString1 = AnnotatedString.Builder("4/6 Задач")
         .apply {
             addStyle(
                 SpanStyle(
@@ -336,7 +336,7 @@ fun TaskCardUI() {
 
             ){
                 Text(
-                    text = "Daily Task",
+                    text = "Ежедневные задачи",
                     fontFamily = Poppins,
                     fontSize = 12.sp,
                     color = SubTextColor,
@@ -359,7 +359,7 @@ fun TaskCardUI() {
                 }
                 Spacer(modifier = Modifier.height(6.dp))
                 Text(
-                    text = "Almost finished,\nkeep it up",
+                    text = "Почти выполнено,\nтак держать!",
                     fontFamily = Poppins,
                     fontSize = 13.sp,
                     color = Color(0xFF292D32),
@@ -431,14 +431,14 @@ Box(
     }
 
     val annotatedString2 = AnnotatedString.Builder(
-        "${percentage.toInt()}%\nDone"
+        "${percentage.toInt()}%\nГотово"
     ).apply {
         addStyle(
             SpanStyle(
                 color = SecondaryColor,
                 fontSize = 8.sp,
                 fontWeight = FontWeight.Normal
-            ), 4,8
+            ), 4,10
         )
     }
 
@@ -476,17 +476,17 @@ fun HeaderUI() {
 //                  .weight(1f)
           ) {
               Text(
-                  text = "Hello, Eugene",
+                  text = "Привет, Евгений",
                   fontFamily = Poppins,
                   fontSize = 18.sp,
                   color = PrimaryTextColor,
                   fontWeight = FontWeight.Bold)
               Text(
-                  text = "Let's do your todays task",
+                  text = "В твоем списке 24 задачи",
                   color = Color.Gray )
           }
           Image(
-              painter = painterResource(id = R.drawable.logo),
+              painter = painterResource(id = R.drawable.logo3),
               contentDescription = "",
                 modifier = Modifier
                     .size(44.dp)
